@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "8204948608",
+    "project_id": "alabtech-d316c",
+    "storage_bucket": "alabtech-d316c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8204948608:android:f92730db9abd54a6f18265",
+        "android_client_info": {
+          "package_name": "com.task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVWHMSxDTqBJiXCixPAHPFTzy1QMW5OPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
+

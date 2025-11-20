@@ -1,0 +1,177 @@
+{
+  "description": "Example notification payloads for testing Firebase Cloud Messaging",
+  
+  "basicNotification": {
+    "to": "USER_FCM_TOKEN",
+    "notification": {
+      "title": "Hello",
+      "body": "This is a basic notification"
+    },
+    "priority": "high"
+  },
+
+  "notificationWithData": {
+    "to": "USER_FCM_TOKEN",
+    "notification": {
+      "title": "New Post Available",
+      "body": "Check out the latest posts!"
+    },
+    "data": {
+      "screen": "Posts",
+      "postId": "12345",
+      "type": "new_post"
+    },
+    "priority": "high"
+  },
+
+  "dataOnlyMessage": {
+    "to": "USER_FCM_TOKEN",
+    "data": {
+      "screen": "Dashboard",
+      "action": "refresh",
+      "silent": "true"
+    },
+    "priority": "high"
+  },
+
+  "topicNotification": {
+    "to": "/topics/news",
+    "notification": {
+      "title": "Breaking News",
+      "body": "Important update for all users!"
+    },
+    "data": {
+      "type": "news",
+      "priority": "high"
+    }
+  },
+
+  "androidSpecific": {
+    "to": "USER_FCM_TOKEN",
+    "notification": {
+      "title": "Android Notification",
+      "body": "This notification has Android-specific settings"
+    },
+    "android": {
+      "priority": "high",
+      "notification": {
+        "sound": "default",
+        "channelId": "default_notification_channel",
+        "color": "#6200EE",
+        "icon": "ic_notification",
+        "tag": "new_message",
+        "clickAction": "FLUTTER_NOTIFICATION_CLICK"
+      }
+    },
+    "priority": "high"
+  },
+
+  "iosSpecific": {
+    "to": "USER_FCM_TOKEN",
+    "notification": {
+      "title": "iOS Notification",
+      "body": "This notification has iOS-specific settings"
+    },
+    "apns": {
+      "payload": {
+        "aps": {
+          "sound": "default",
+          "badge": 1,
+          "contentAvailable": true,
+          "category": "MESSAGE_CATEGORY"
+        }
+      }
+    },
+    "priority": "high"
+  },
+
+  "scheduledNotification": {
+    "to": "USER_FCM_TOKEN",
+    "notification": {
+      "title": "Reminder",
+      "body": "Don't forget to check your tasks!"
+    },
+    "data": {
+      "screen": "Dashboard",
+      "type": "reminder"
+    },
+    "android": {
+      "ttl": "3600s"
+    },
+    "apns": {
+      "headers": {
+        "apns-expiration": "1696118400"
+      }
+    }
+  },
+
+  "multipleDevices": {
+    "registration_ids": [
+      "FCM_TOKEN_1",
+      "FCM_TOKEN_2",
+      "FCM_TOKEN_3"
+    ],
+    "notification": {
+      "title": "Group Notification",
+      "body": "Sent to multiple devices"
+    },
+    "priority": "high"
+  },
+
+  "conditionalMessage": {
+    "condition": "'news' in topics || 'updates' in topics",
+    "notification": {
+      "title": "Topic Notification",
+      "body": "Sent to users subscribed to news OR updates"
+    }
+  },
+
+  "imageNotification": {
+    "to": "USER_FCM_TOKEN",
+    "notification": {
+      "title": "Check this image",
+      "body": "Beautiful landscape photo"
+    },
+    "android": {
+      "notification": {
+        "imageUrl": "https://example.com/image.jpg"
+      }
+    },
+    "apns": {
+      "payload": {
+        "aps": {
+          "mutableContent": 1
+        }
+      },
+      "fcm_options": {
+        "image": "https://example.com/image.jpg"
+      }
+    }
+  },
+
+  "actionableNotification": {
+    "to": "USER_FCM_TOKEN",
+    "notification": {
+      "title": "New Message",
+      "body": "You have a new message from John"
+    },
+    "data": {
+      "action": "reply",
+      "messageId": "msg_12345",
+      "senderId": "user_67890"
+    },
+    "android": {
+      "notification": {
+        "clickAction": "MESSAGE_ACTION"
+      }
+    },
+    "apns": {
+      "payload": {
+        "aps": {
+          "category": "MESSAGE_CATEGORY"
+        }
+      }
+    }
+  }
+}
+
